@@ -17,14 +17,14 @@ target_labels = ['Adipocytes', 'Endothelial_Cells', 'Fibroblasts', 'Immune_Cells
 
 # Define the file paths
 file_paths = {
-    "pvat_8weeks_control_male": "../exported_data/pvat_8weeks_control_male.h5ad",
-    "pvat_8weeks_control_female": "../exported_data/pvat_8weeks_control_female.h5ad",
-    "pvat_8weeks_hf_male": "../exported_data/pvat_8weeks_hf_male.h5ad",
-    "pvat_8weeks_hf_female": "../exported_data/pvat_8weeks_hf_female.h5ad",
-    "pvat_24weeks_control_male": "../exported_data/pvat_24weeks_control_male.h5ad",
-    "pvat_24weeks_control_female": "../exported_data/pvat_24weeks_control_female.h5ad",
-    "pvat_24weeks_hf_male": "../exported_data/pvat_24weeks_hf_male.h5ad",
-    "pvat_24weeks_hf_female": "../exported_data/pvat_24weeks_hf_female.h5ad"
+    "pvat_8weeks_control_male": "pvat_8weeks_control_male.h5ad",
+    "pvat_8weeks_control_female": "pvat_8weeks_control_female.h5ad",
+    "pvat_8weeks_hf_male": "pvat_8weeks_hf_male.h5ad",
+    "pvat_8weeks_hf_female": "pvat_8weeks_hf_female.h5ad",
+    "pvat_24weeks_control_male": "pvat_24weeks_control_male.h5ad",
+    "pvat_24weeks_control_female": "pvat_24weeks_control_female.h5ad",
+    "pvat_24weeks_hf_male": "pvat_24weeks_hf_male.h5ad",
+    "pvat_24weeks_hf_female": "pvat_24weeks_hf_female.h5ad"
 }
 
 # Load the datasets
