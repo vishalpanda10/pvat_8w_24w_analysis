@@ -24,3 +24,4 @@ watchdog==4.0.1
 numpy==1.26.2
 scanpy==1.9.8
 plotnine==0.12.4
+liana==1.0.4
