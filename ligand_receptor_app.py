@@ -71,7 +71,7 @@ if st.button("Generate Heatmap"):
 
     fig, ax = plt.subplots(figsize=(34, 15))
     sns.heatmap(heatmap_df, annot=True, cmap='Blues', ax=ax)
-    ax.yaxis.set_tick_params(labelsize=13)
+    ax.yaxis.set_tick_params(labelsize=13, rotation=0)
     ax.xaxis.set_tick_params(labelsize=13)
     ax.set_title('Ligand-Receptor Interaction Heatmap')
     ax.set_xlabel('Receptor Complex')
