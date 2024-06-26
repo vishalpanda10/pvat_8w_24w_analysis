@@ -57,7 +57,7 @@ lr_df = datasets[dataset_option].uns['nichenet_lr_res']
 filtered_df = lr_df[(lr_df['weight'] > 1.25)]
 datasets[dataset_option].uns['nichenet_res_filtered'] = filtered_df
 
-filtered_df_heatmap = lr_df[(lr_df['weight'] > 0.5)]
+filtered_df_heatmap = lr_df[(lr_df['weight'] > 0.7)]
 
 # Buttons for generating plots
 #col1, col2 = st.columns(2)
