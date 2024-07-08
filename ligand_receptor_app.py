@@ -70,7 +70,7 @@ if st.button("Generate Heatmap"):
     heatmap_df = heatmap_df.pivot_table(values='weight', index='ligand_complex', columns='receptor_complex', fill_value=0)
 
     fig, ax = plt.subplots(figsize=(40, 18))
-    sns.heatmap(heatmap_df, annot=True, cmap='Blues', ax=ax)
+    sns.heatmap(heatmap_df, annot=True, cmap='Blues', ax=ax, annot_kws={"size": 14})
     ax.yaxis.set_tick_params(labelsize=15, rotation=0)
     ax.xaxis.set_tick_params(labelsize=15)
     ax.set_title('Ligand-Receptor Interaction Heatmap', fontsize=18)
