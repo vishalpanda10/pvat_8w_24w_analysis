@@ -70,7 +70,7 @@ if st.button("Generate Heatmap"):
     heatmap_df = heatmap_df.pivot_table(values='weight', index='ligand_complex', columns='receptor_complex', fill_value=0)
 
     fig, ax = plt.subplots(figsize=(40, 18))
-    sns.heatmap(heatmap_df, annot=True, cmap='Blues', ax=ax, annot_kws={"size": 14})
+    sns.heatmap(heatmap_df, annot=True, cmap='Blues', ax=ax, annot_kws={"size": 15})
     ax.set_xticklabels(ax.get_xticklabels(), rotation=45, fontsize=17)  
     ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=17)  
   
