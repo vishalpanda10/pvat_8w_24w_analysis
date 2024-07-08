@@ -57,7 +57,7 @@ lr_df = datasets[dataset_option].uns['nichenet_lr_res']
 filtered_df = lr_df[(lr_df['weight'] > 1.25)]
 datasets[dataset_option].uns['nichenet_res_filtered'] = filtered_df
 
-filtered_df_heatmap = lr_df[(lr_df['weight'] > 0.7)]
+filtered_df_heatmap = lr_df[(lr_df['weight'] > 0.8)]
 
 # Buttons for generating plots
 #col1, col2 = st.columns(2)
@@ -69,11 +69,11 @@ if st.button("Generate Heatmap"):
     heatmap_df = filtered_df_heatmap[(filtered_df_heatmap['source'] == source_cell) & (filtered_df_heatmap['target'] == target_cell)]
     heatmap_df = heatmap_df.pivot_table(values='weight', index='ligand_complex', columns='receptor_complex', fill_value=0)
 
-    fig, ax = plt.subplots(figsize=(34, 15))
+    fig, ax = plt.subplots(figsize=(40, 18))
     sns.heatmap(heatmap_df, annot=True, cmap='Blues', ax=ax)
-    ax.yaxis.set_tick_params(labelsize=13, rotation=0)
-    ax.xaxis.set_tick_params(labelsize=13)
-    ax.set_title('Ligand-Receptor Interaction Heatmap')
+    ax.yaxis.set_tick_params(labelsize=15, rotation=0)
+    ax.xaxis.set_tick_params(labelsize=15)
+    ax.set_title('Ligand-Receptor Interaction Heatmap', fontsize=18)
     ax.set_xlabel('Receptor Complex')
     ax.set_ylabel('Ligand Complex')
 
@@ -87,7 +87,7 @@ if st.button("Generate Dotplot"):
                             size='weight',
                             source_labels=source_labels,
                             target_labels=target_labels,
-                            figure_size=(20, 20),  # Adjust to a reasonable figure size
+                            figure_size=(20, 20),  
                             uns_key='nichenet_res_filtered')
 
     # Modify the ggplot object to rotate x-axis labels and increase label size
@@ -96,10 +96,8 @@ if st.button("Generate Dotplot"):
         axis_text_y=element_text(size=16)
     )
 
-    # Save the ggplot to a temporary file with larger dimensions
     with tempfile.NamedTemporaryFile(suffix=".png") as tmpfile:
-        dotplot.save(tmpfile.name, width=20, height=20, dpi=300, limitsize=False)  # Adjust width and height
-        # Center the image using st.columns
+        dotplot.save(tmpfile.name, width=20, height=20, dpi=300, limitsize=False)  
         col_center1, col_center2, col_center3 = st.columns([1, 2, 1])
         with col_center2:
             st.image(tmpfile.name, use_column_width=True)
